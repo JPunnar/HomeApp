@@ -1,2 +1,12 @@
-.get-weather.btn.btn-secondary
-  Fetch current weather in your location
+%button.get-weather.btn.btn-primary{"data-target" => "#exampleModal", "data-toggle" => "modal", :type => "button"}
+  Check Current Weather
+
+#exampleModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %h5#exampleModalLabel.modal-title Current Weather
+      %strong.modal-body.weather-info
+        Loading...
+      .modal-footer
+        %button.btn.btn-primary{"data-dismiss" => "modal", :type => "button"} OK

@@ -2,7 +2,6 @@ $(document).ready(function(){
   $('.get-weather').click(getWeather);
 });
 
-
 function getWeather() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(makeApiCall);
@@ -23,12 +22,20 @@ function makeApiCall(position) {
     type: "POST",
     url: 'weather',
     data: data,
-    success: succe,
+    success: render_weather,
   });
 
 
-  function succe(weather) {
-    $('.get-weather').html(weather.description);
-    $('.get-weather').append(weather.temperature);
+  function render_weather(weather) {
+    $this = $('.weather-info')
+    $this.html('temperature: ' + weather.temperature + ' °C');
+    $this.append('<br>');
+    $this.append('description: ' + weather.description);
+    $this.append('<br>');
+    $this.append('humidity: ' + weather.humidity);
+    $this.append('<br>');
+    $this.append('visibility: ' + weather.visibility);
+    $this.append('<br>');
+    $this.append('wind: ' + weather.wind);
   }
 }
