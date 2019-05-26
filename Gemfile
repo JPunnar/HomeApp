@@ -7,7 +7,7 @@ gem 'rails', '~> 5.2.1'
 gem 'pg'
 gem 'puma', '~> 3.11'
 gem 'jquery-rails'
-gem 'sass-rails'
+gem 'sassc-rails'
 gem 'bootstrap', '~> 4.3.1'
 gem 'uglifier', '>= 1.3.0'
 gem 'bootsnap', require: false
