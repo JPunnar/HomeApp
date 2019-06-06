@@ -3,6 +3,15 @@ $(document).ready(function(){
 });
 
 $(function() {
+  $('#new_chat_message').on('ajax:beforeSend', function() {
+    message = $(this).find('input[type="text"]').val()
+    if ( message.trim().length == 0) {
+      return false;
+    }
+  });
+});
+
+$(function() {
   $('#new_chat_message').on('ajax:success', clearChatInput);
 });
 
