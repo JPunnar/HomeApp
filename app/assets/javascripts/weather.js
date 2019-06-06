@@ -27,15 +27,19 @@ function makeApiCall(position) {
 
 
   function render_weather(weather) {
-    $this = $('.weather-info')
-    $this.html('temperature: ' + weather.temperature + ' °C');
-    $this.append('<br>');
-    $this.append('description: ' + weather.description);
-    $this.append('<br>');
-    $this.append('humidity: ' + weather.humidity);
-    $this.append('<br>');
-    $this.append('visibility: ' + weather.visibility);
-    $this.append('<br>');
-    $this.append('wind: ' + weather.wind);
+    if (weather.errors !== undefined) {
+      $('.weather-info').html(weather.errors);
+    } else {
+      $this = $('.weather-info')
+      $this.html('temperature: ' + weather.temperature + ' °C');
+      $this.append('<br>');
+      $this.append('description: ' + weather.description);
+      $this.append('<br>');
+      $this.append('humidity: ' + weather.humidity);
+      $this.append('<br>');
+      $this.append('visibility: ' + weather.visibility);
+      $this.append('<br>');
+      $this.append('wind: ' + weather.wind);
+    }
   }
 }

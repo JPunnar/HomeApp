@@ -1,0 +1,9 @@
+.chat-message-container
+  .row.no-gutters
+    .col
+      .message-content
+        %p.mb-1
+          = chat_message.message
+        .text-right
+          %small
+            = chat_message.created_at

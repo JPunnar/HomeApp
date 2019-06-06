@@ -6,5 +6,7 @@ class WeathersController < ApplicationController
       longitude: params['longitude']
     )
     render json: weather
+  rescue StandardError
+    render json: {:errors=>'Something went wrong.'}
   end
 end
