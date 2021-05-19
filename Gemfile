@@ -5,7 +5,7 @@ ruby '2.6.3'
 
 gem 'rails', '~> 5.2.1'
 gem 'pg'
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 4.3'
 gem 'jquery-rails'
 gem 'sassc-rails'
 gem 'bootstrap', '~> 4.3.1'
